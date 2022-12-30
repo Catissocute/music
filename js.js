@@ -23,13 +23,9 @@ var u = new Audio("music(21).mp3");
 var v = new Audio("music(22).mp3");
 var w = new Audio("music(23).mp3");
 var x = new Audio("music(24).mp3");
-var y = new Audio("music(25).mp3");
-var z = new Audio("music(26).mp3");
-var aa = new Audio("music(27).mp3");
-var bb = new Audio("music(28).mp3");
 
 //musicarray
-var musicarray = [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,aa,bb];
+var musicarray = [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x];
 //shuffling musicarray
 function shuffling(){
     let shuffled = musicarray
@@ -52,12 +48,23 @@ function plae() {
     stopm.onclick = function(){
         musicarray[z].pause();
         musicarray[z].currentTime = 0;
+        //random bg image on stop button
+        var frw = document.querySelector(':root');
+        const daimage =["image(1).jpg","image(2).jpg","image(3).jpg","image(4).jpg","image(5).jpg","image(6).jpg","image(7).jpg","image(8).jpg",]
+        var darandoming = Math.floor(Math.random()* 8);
+        var bodyimg = ("url(" + daimage[darandoming] + ")");
+        frw.style.setProperty('--bgimage', bodyimg);
     }
 //playing onclick play button
     musicarray[z].play();  
     musicarray[z].onended = function(){ 
         z = z+1;
         musicarray[z].play();
-        
+        //random bg image
+        var frw = document.querySelector(':root');
+        const daimage =["image(1).jpg","image(2).jpg","image(3).jpg","image(4).jpg","image(5).jpg","image(6).jpg","image(7).jpg","image(8).jpg",]
+        var darandoming = Math.floor(Math.random()* 8);
+        var bodyimg = ("url(" + daimage[darandoming] + ")");
+        frw.style.setProperty('--bgimage', bodyimg);
     };
 }

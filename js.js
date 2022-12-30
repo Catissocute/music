@@ -23,9 +23,13 @@ var u = new Audio("music(21).mp3");
 var v = new Audio("music(22).mp3");
 var w = new Audio("music(23).mp3");
 var x = new Audio("music(24).mp3");
+var y = new Audio("music(25).mp3");
+var z = new Audio("music(26).mp3");
+var aa = new Audio("music(27).mp3");
+var bb = new Audio("music(28).mp3");
 
 //musicarray
-var musicarray = [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x];
+var musicarray = [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,aa,bb];
 //shuffling musicarray
 function shuffling(){
     let shuffled = musicarray

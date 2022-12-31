@@ -3,20 +3,31 @@
 <head>
 <title>Quote</title>
 <link rel="stylesheet" href="css.css">
+<script type="text/javascript">
+  function changebgcolor(){
+    const backgroundimg = ["i1.jpg","i2.jpg","i3.jpg","i4.jpg","i5.jpg","i6.jpg","i7.jpg","i8.jpg"];
+    var arraay = backgroundimg.length;
+    var backgroundrandom = Math.floor(Math.random()* arraay);
+    var bodyimg = ("url(" + backgroundimg[backgroundrandom] + ")");
+    var rcause = document.querySelector(':root');
+    rcause.style.setProperty('--daimf', bodyimg)
+  }
+
+</script>
 </head>
 <body>
     <div class="now playing" id="music">
-        <span class="bar n1">A</span>
-        <span class="bar n2">B</span>
-        <span class="bar n3">c</span>
-        <span class="bar n4">D</span>
-        <span class="bar n5">E</span>
-        <span class="bar n6">F</span>
-        <span class="bar n7">G</span>
-        <span class="bar n8">H</span>
+        <span class="bar n1"></span>
+        <span class="bar n2"></span>
+        <span class="bar n3"></span>
+        <span class="bar n4"></span>
+        <span class="bar n5"></span>
+        <span class="bar n6"></span>
+        <span class="bar n7"></span>
+        <span class="bar n8"></span>
       </div>
     <div class="btn-div">
-    <button id="btn-play" onclick="plae()">Play</button>
+    <button id="btn-play" onclick="plae(); changebgcolor()">Play</button>
     <button id="btn-pause">Pause</button>
     <button id="btn-stop" >Stop</button>
     <button id="btn-shuffle" onclick="shuffling()">Shuffle</button>

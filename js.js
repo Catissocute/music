@@ -24,6 +24,26 @@ var v = new Audio("music(22).mp3");
 var w = new Audio("music(23).mp3");
 var x = new Audio("music(24).mp3");
 
+
+
+const disbutton = document.querySelector('#btn-play');
+const paubutton = document.querySelector('#btn-pause');
+const stobutton = document.querySelector('#btn-stop');
+const disableButton = () => {
+  console.log("va");
+  disbutton.disabled = true;
+
+};
+const enableButton = () => {
+    console.log("va");
+    disbutton.disabled = false;
+  
+  };
+disbutton.addEventListener('click', disableButton);
+paubutton.addEventListener('click', enableButton);
+stobutton.addEventListener('click', enableButton);
+
+
 //musicarray
 var musicarray = [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x];
 //shuffling musicarray
@@ -39,7 +59,7 @@ var ml = musicarray.length;
 const pausem = document.getElementById("btn-pause");
 const stopm = document.getElementById("btn-stop");
 function plae() {
-
+    
 //pausing onclink of a button
     pausem.onclick = function(){
         musicarray[z].pause();
@@ -48,23 +68,13 @@ function plae() {
     stopm.onclick = function(){
         musicarray[z].pause();
         musicarray[z].currentTime = 0;
-        //random bg image on stop button
-        var frw = document.querySelector(':root');
-        const daimage =["image(1).jpg","image(2).jpg","image(3).jpg","image(4).jpg","image(5).jpg","image(6).jpg","image(7).jpg","image(8).jpg",]
-        var darandoming = Math.floor(Math.random()* 8);
-        var bodyimg = ("url(" + daimage[darandoming] + ")");
-        frw.style.setProperty('--bgimage', bodyimg);
+
     }
 //playing onclick play button
     musicarray[z].play();  
     musicarray[z].onended = function(){ 
         z = z+1;
         musicarray[z].play();
-        //random bg image
-        var frw = document.querySelector(':root');
-        const daimage =["image(1).jpg","image(2).jpg","image(3).jpg","image(4).jpg","image(5).jpg","image(6).jpg","image(7).jpg","image(8).jpg",]
-        var darandoming = Math.floor(Math.random()* 8);
-        var bodyimg = ("url(" + daimage[darandoming] + ")");
-        frw.style.setProperty('--bgimage', bodyimg);
+ 
     };
 }

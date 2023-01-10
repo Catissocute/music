@@ -82,3 +82,10 @@ function plae() {
  
     };
 }
+function volchange(){
+    var voluog = document.getElementById('volume').value;
+    var volu = parseInt(voluog)/1000;
+    console.log(volu);
+    musicarray[z].volume = volu;
+}
+

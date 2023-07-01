@@ -1,28 +1,36 @@
 :root{
-  --daimf: url(i1.jpg) ;
+  --daimf: url(i5.jpg) ;
 }
 body{
-  height: 100%;
+  height: 100vh;
   background: var(--daimf);
   background-size: cover;
   background-position: center;
   margin: 0;
 }
 .btn-div{
-  height: 100vh;
-  width: 100%;
+  position: relative;
+  top: 50%;
+  left: 28%;
+  width: fit-content;
   display: grid;
   justify-content: center;
   align-content: center;
   gap: 4px;
   grid-auto-flow: column;
+  background-color: rgba(0, 0, 0, 0.744);
+  height: 70px;
+  width: 645px;
+  border-radius: 17%;
 }
 button{
-  background-color: aliceblue;
+  background-color: rgb(182, 188, 194);
   height: 50px;
   width: 80px;
-    font-family: 'Times New Roman', Times, serif;
-    color: blue;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: large;
+  color: blue;
+  border-radius: 30%;
 }
 #music{
     width: 250px;

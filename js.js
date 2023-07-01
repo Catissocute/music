@@ -1,4 +1,3 @@
-//Loading the music add a line here and then add that var in musciarray
 var a = new Audio("music(1).mp3");
 var b = new Audio("music(2).mp3");
 var c = new Audio("music(3).mp3");
@@ -15,7 +14,7 @@ var m = new Audio("music(13).mp3");
 var n = new Audio("music(14).mp3");
 var o = new Audio("music(15).mp3");
 var p = new Audio("music(16).mp3");
-var q = new Audio("music(17).mp3");
+var q = new Audio("music(17).mp3")
 var r = new Audio("music(18).mp3");
 var s = new Audio("music(19).mp3");
 var t = new Audio("music(20).mp3");
@@ -27,60 +26,48 @@ var y = new Audio("music(25).mp3");
 var z = new Audio("music(26).mp3");
 var aa = new Audio("music(27).mp3");
 var bb = new Audio("music(28).mp3");
+var cc= new Audio("music(30).mp3");
+const plasto = document.getElementById('p-r');
 
-
-
-const disbutton = document.querySelector('#btn-play');
-const paubutton = document.querySelector('#btn-pause');
-const stobutton = document.querySelector('#btn-stop');
-const disableButton = () => {
-  console.log("va");
-  disbutton.disabled = true;
-
-};
-const enableButton = () => {
-    console.log("va");
-    disbutton.disabled = false;
-  
-  };
-disbutton.addEventListener('click', disableButton);
-paubutton.addEventListener('click', enableButton);
-stobutton.addEventListener('click', enableButton);
-
-
-//musicarray
-var musicarray = [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,aa,bb];
-//shuffling musicarray
-function shuffling(){
-    let shuffled = musicarray
-    .map(value => ({ value, sort: Math.random() }))
-    .sort((a, b) => a.sort - b.sort)
-    .map(({ value }) => value);
-    musicarray = shuffled;
+const musicarray = [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,y,z,aa,bb,cc,];
+var len = musicarray.length;
+const playbtn = document.querySelector("#ply");
+var count = 0;
+function shuffle(){
+    var x = Math.floor(Math.random()*len)+1;
+    var z = 0;
+    window.z = x;
 }
-var  z = 0;
-var ml = musicarray.length;
-const pausem = document.getElementById("btn-pause");
-const stopm = document.getElementById("btn-stop");
-function plae() {
-    
-//pausing onclink of a button
-    pausem.onclick = function(){
-        musicarray[z].pause();
-    }
-//stoping onclick of a button
-    stopm.onclick = function(){
-        musicarray[z].pause();
-        musicarray[z].currentTime = 0;
+function plae(){
+    shuffle();
+    musicarray[z].play();
+    playbtn.disabled = true;
 
+    musicarray[z].onended = function() {myFunction()};
+    function myFunction(){
+        plae();
+        changebgcolor();
     }
-//playing onclick play button
-    musicarray[z].play();  
-    musicarray[z].onended = function(){ 
-        z = z+1;
+
+}
+var playstate = true;
+function pause(){
+    if(playstate == true){
+        musicarray[z].pause();
+        window.playstate = false;
+        plasto.innerText = "Resume";
+    }
+    else{
         musicarray[z].play();
- 
-    };
+        window.playstate = true;
+        plasto.innerText = "Pause";
+    }
+}
+function stop(){
+    musicarray[z].pause();
+    musicarray[z].currentTime = 0;
+    shuffle();
+    playbtn.disabled = false;   
 }
 function volchange(){
     var voluog = document.getElementById('volume').value;
@@ -88,4 +75,26 @@ function volchange(){
     console.log(volu);
     musicarray[z].volume = volu;
 }
-
+function changebgcolor(){
+    const backgroundimg = ["i1.jpg","i2.jpg","i3.jpg","i4.jpg","i5.jpg","i6.jpg","i7.jpg","i8.jpg"];
+    var arraay = backgroundimg.length;
+    var backgroundrandom = Math.floor(Math.random()* arraay);
+    var bodyimg = ("url(" + backgroundimg[backgroundrandom] + ")");
+    var rcause = document.querySelector(':root');
+    rcause.style.setProperty('--daimf', bodyimg)
+  }
+function next(){
+    musicarray[z].pause();
+    musicarray[z].currentTime = 0;
+    shuffle();
+    plae();
+    changebgcolor();
+}
+function fiveski(){
+    var cur = musicarray[z].currentTime;
+    musicarray[z].currentTime = cur+5;
+}
+function fivebac(){
+    var cur = musicarray[z].currentTime;
+    musicarray[z].currentTime = cur-5;
+}

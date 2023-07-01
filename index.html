@@ -3,19 +3,6 @@
 <head>
 <title>Quote</title>
 <link rel="stylesheet" href="css.css">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<script type="text/javascript">
-  function changebgcolor(){
-    const backgroundimg = ["i1.jpg","i2.jpg","i3.jpg","i4.jpg","i5.jpg","i6.jpg","i7.jpg","i8.jpg"];
-    var arraay = backgroundimg.length;
-    var backgroundrandom = Math.floor(Math.random()* arraay);
-    var bodyimg = ("url(" + backgroundimg[backgroundrandom] + ")");
-    var rcause = document.querySelector(':root');
-    rcause.style.setProperty('--daimf', bodyimg)
-  }
 
 </script>
 </head>
@@ -30,14 +17,18 @@
         <span class="bar n7"></span>
         <span class="bar n8"></span>
       </div>
+      
     <div class="btn-div">
-    <button id="btn-play" onclick="plae(); changebgcolor()">Play</button>
-    <button id="btn-pause">Pause</button>
-    <button id="btn-stop" >Stop</button>
-    <button id="btn-shuffle" onclick="shuffling()">Shuffle</button>
-    <input type="range" max="1000" min="0" id="volume" onchange="volchange()">
+      <button onclick="plae()" id="ply" >Play</button>
+      <button onclick="pause()" id="p-r">Pause</button>
+      <button onclick="stop()">Stop</button>
+      <button onclick="next()">Next</button>
+      <button onclick="fiveski()">Skip</button>
+      <button onclick="fivebac()">Repeat</button>
+      <input type="range" max="1000" min="0" id="volume" onchange="volchange()">
     </div>
 
-    <script src="js.js"></script>
+
+    <script type="text/javascript" src="js.js"></script>
 </body>
 </html>

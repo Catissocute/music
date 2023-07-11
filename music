@@ -1,1 +1,25 @@
-<!DOCTYPE html> <html lang="en"> <head> <title>Quote</title> <link rel="stylesheet" href="css.css"> </script> </head> <body> <div class="now playing" id="music"> <span class="bar n1"></span> <span class="bar n2"></span> <span class="bar n3"></span> <span class="bar n4"></span> <span class="bar n5"></span> <span class="bar n6"></span> <span class="bar n7"></span> <span class="bar n8"></span> </div> <div class="btn-div"> <button onclick="plae()" id="ply" >Play</button> <button onclick="pause()" id="p-r">Pause</button> <button onclick="stop()">Stop</button> <button onclick="next()">Next</button> <button onclick="fiveski()">Skip</button> <button onclick="fivebac()">Repeat</button> <input type="range" max="1000" min="0" id="volume" onchange="volchange()"> </div> <script type="text/javascript" src="js.js"></script> </body> </html>
+<!DOCTYPE html>
+ <html lang="en">
+     <head> <title>Quote</title> 
+        <link rel="stylesheet" href="css.css"> 
+    </script> </head> <body>
+         <div class="now playing" id="music">
+             <span class="bar n1"></span>
+              <span class="bar n2"></span>
+               <span class="bar n3"></span> 
+               <span class="bar n4"></span>
+                <span class="bar n5"></span> 
+                <span class="bar n6"></span> 
+                <span class="bar n7"></span> 
+                <span class="bar n8"></span>
+             </div> <div class="btn-div">
+                 <button onclick="plae()" id="ply" >Play</button>
+                  <button onclick="pause()" id="p-r">Pause</button>
+                   <button onclick="stop()">Stop</button> 
+                   <button onclick="next()">Next</button> 
+                   <button onclick="fiveski()">Skip</button> 
+                   <button onclick="fivebac()">Repeat</button>
+                    <input type="range" max="1000" min="0" id="volume" onchange="volchange()">
+                 </div> <script type="text/javascript" src="js.js"></script> 
+                </body> 
+                </html>
